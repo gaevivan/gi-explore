@@ -1,4 +1,4 @@
-$menu-height: 50px;
+$menu-height: 44px;
 
 .body {
   position: absolute;
@@ -22,4 +22,6 @@ $menu-height: 50px;
   width: 100vw;
   height: $menu-height;
   z-index: 1;
+  box-sizing: border-box;
+  background-color: rgba(48, 48, 48, 0.5);
 }

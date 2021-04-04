@@ -1,4 +1,5 @@
 export enum Design {
   palette = 'palette',
-  colormode = 'colormode'
+  colormode = 'colormode',
+  components = 'components'
 }

@@ -1,8 +1,36 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
 @font-face {
   font-family: "JetBrains";
   src: url("./assets/fonts/JetBrainsMonoNL-Regular.ttf");
 }
 
-body, input, button {
+body,
+input,
+button {
   font-family: "JetBrains";
+}
+
+button {
+  --color-overlay-light: rgba(255, 255, 255, 0.2);
+  $min-size: 30px;
+  box-shadow: inset 0.5rem 0.5rem 0.25rem var(--color-bg-light);
+  cursor: pointer;
+  border-radius: 2px;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  min-width: $min-size;
+  min-height: $min-size;
+  padding: 0.5rem;
+}
+button:hover {
+  box-shadow: 0 0 0 4px var(--color-overlay-dark),
+    inset 0 0 0 var(--color-overlay-dark),
+    inset 0.5rem 0.5rem 0.25rem var(--color-bg-light);
+}
+button:active {
+  box-shadow: 0 0 0 4px var(--color-overlay-dark),
+    inset 0.5rem 0.5rem 0.75rem var(--color-bg-dark);
 }

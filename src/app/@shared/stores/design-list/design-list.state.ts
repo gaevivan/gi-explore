@@ -15,6 +15,10 @@ type StateType = KeyValueObject<Design>;
     {
       key: Design.colormode,
       value: 'Тёмный режим'
+    },
+    {
+      key: Design.components,
+      value: 'Компоненты'
     }
   ],
 })

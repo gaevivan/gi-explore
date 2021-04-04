@@ -22,6 +22,13 @@ const routes: Routes = [
         (module) => module.ColorModeModule
       ),
   },
+  {
+    path: Design.components,
+    loadChildren: () =>
+      import('../components-list/components-list.module').then(
+        (module) => module.ComponentsListModule
+      ),
+  },
 ];
 
 @NgModule({

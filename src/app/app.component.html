@@ -1,5 +1,7 @@
 <div class="navbar">
-  <button (click)="openMenu()">menu</button>
+  <button (click)="openMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
 </div>
 
 <ng-container *ngIf="isMenuOpened$ | async">
