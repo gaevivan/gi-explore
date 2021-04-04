@@ -1,11 +1,11 @@
-<div class="color-mode-page__content" [style.backgroundColor]="color.light">
+<div class="color-mode-page__content">
   Режим
-  <div>
+  <div class="color-mode-page__item">
     <input type="radio" [formControl]="colorControl" [value]="color.bgdark">
-    <label>Тёмный</label>
+    <img src='../../assets/img/moon.png'>
   </div>
-  <div>
+  <div class="color-mode-page__item">
     <input type="radio" [formControl]="colorControl" [value]="color.bglight">
-    <label>Светлый</label>
+    <img src='../../assets/img/sun.png'>
   </div>
 </div>

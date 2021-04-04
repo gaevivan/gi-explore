@@ -8,11 +8,19 @@
 
 .color-mode-page {
   &__content {
+    background: white;
     padding: 1rem;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 100px;
     border-radius: 3px;
     gap: 1rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
   }
 }
