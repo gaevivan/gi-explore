@@ -6,14 +6,21 @@
   align-items: center;
 }
 
-.random-password-page {
+.random-value-page {
   &__content {
     background-color: white;
     padding: 1rem;
     display: flex;
-    flex-direction: column;
-    width: 200px;
+    width: fit-content;
     gap: 15px;
     border-radius: 3px;
+  }
+  &__add-list,
+  &__generator {
+    display: flex;
+    flex-direction: column;
+  }
+  &__add-list-input {
+    display: flex;
   }
 }

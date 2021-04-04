@@ -1,1 +1,15 @@
-<button>Button</button>
+<div class="random-value-page__content">
+  <div class="random-value-page__generator">
+    <input [formControl]="valueControl">
+    <button (click)="copy()">copy</button>
+    <button (click)="generate()" [disabled]="listControl.invalid">generate</button>
+  </div>
+  <div class="random-value-page__add-list">
+    <div class="random-value-page__add-list-input">
+      <input [formControl]="addControl">
+      <mat-icon [title]="listControl.value">info</mat-icon>
+    </div>
+    <button (click)="add()" [disabled]="addControl.invalid">add</button>
+    <button (click)="clear()" [disabled]="listControl.invalid">clear</button>
+  </div>
+</div>
