@@ -1,0 +1,11 @@
+<div class="navbar">
+  <button (click)="openMenu()">menu</button>
+</div>
+
+<ng-container *ngIf="isMenuOpened$ | async">
+  <app-menu></app-menu>
+</ng-container>
+
+<div class="body" [style.background]="color$ | async">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,13 @@
+<div class="menu__content">
+  <ng-container *ngFor="let projectItem of projectList$ | async">
+    <a [href]="projectItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
+      <h3 >{{projectItem.value}}</h3>
+    </a>
+  </ng-container>
+  <br>
+  <ng-container *ngFor="let designItem of designList$ | async">
+    <a [href]="designItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
+      <h3 >{{designItem.value}}</h3>
+    </a>
+  </ng-container>
+</div>
