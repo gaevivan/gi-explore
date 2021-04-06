@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
+import { Location } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
@@ -7,4 +12,10 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NotFoundComponent {}
+export class NotFoundComponent {
+  constructor(private readonly location: Location) {}
+
+  public back(): void {
+    this.location.back();
+  }
+}

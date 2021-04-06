@@ -10,4 +10,10 @@
       <h3 >{{designItem.value}}</h3>
     </a>
   </ng-container>
+  <br>
+  <ng-container *ngFor="let gameItem of gameList$ | async">
+    <a [href]="gameItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
+      <h3 >{{gameItem.value}}</h3>
+    </a>
+  </ng-container>
 </div>

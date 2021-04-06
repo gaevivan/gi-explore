@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RandomValueComponent } from './random-value.component';
+import { HeadsAndTailsComponent } from './heads-and-tails.component';
 
 const ROUTES: Routes = [
   {
     path: '',
-    component: RandomValueComponent,
+    component: HeadsAndTailsComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const ROUTES: Routes = [
   imports: [RouterModule.forChild(ROUTES)],
   exports: [RouterModule],
 })
-export class RandomValueRoutingModule {}
+export class HeadsAndTailsRoutingModule {}

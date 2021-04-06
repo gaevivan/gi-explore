@@ -9,6 +9,7 @@ import { ColorModeState } from '@shared/stores/color-mode/color-mode.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { ProjectListState } from '@shared/stores/project-list/project-list.state';
 import { DesignListState } from '@shared/stores/design-list/design-list.state';
+import { GameListState } from '@shared/stores/game-list/game-list.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,7 @@ import { DesignListState } from '@shared/stores/design-list/design-list.state';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    NgxsModule.forRoot([ColorModeState, ProjectListState, DesignListState]),
+    NgxsModule.forRoot([ColorModeState, ProjectListState, DesignListState, GameListState]),
     NgxsStoragePluginModule.forRoot({
       key: [ColorModeState],
     }),

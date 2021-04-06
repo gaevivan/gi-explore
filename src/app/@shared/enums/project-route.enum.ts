@@ -1,4 +1,4 @@
-export enum Project {
+export enum ProjectRoute {
   randompass = 'randompass',
   randomvalue = 'randomvalue'
 }

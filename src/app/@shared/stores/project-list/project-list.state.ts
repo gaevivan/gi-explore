@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { State } from '@ngxs/store';
-import { Project } from '@shared/enums/project.enum';
+import { ProjectRoute } from '@shared/enums/project-route.enum';
 import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 
-type StateType = KeyValueObject<Project>;
+type StateType = KeyValueObject<ProjectRoute>;
 
 @State<StateType[]>({
   name: 'ProjectListState',
   defaults: [
     {
-      key: Project.randompass,
+      key: ProjectRoute.randompass,
       value: 'Генератор паролей'
     },
     {
-      key: Project.randomvalue,
+      key: ProjectRoute.randomvalue,
       value: 'Случайное значение'
     }
   ],

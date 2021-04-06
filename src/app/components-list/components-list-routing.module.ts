@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComponentsListComponent } from './components-list.component';
 
-const routes: Routes = [
+const ROUTES: Routes = [
   {
     path: '',
     component: ComponentsListComponent,
@@ -10,7 +10,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(ROUTES)],
   exports: [RouterModule],
 })
 export class ComponentsListRoutingModule {}

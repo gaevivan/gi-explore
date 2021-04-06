@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { State } from '@ngxs/store';
-import { Design } from '@shared/enums/design.enum';
+import { DesignRoute } from '@shared/enums/design-route.enum';
 import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 
-type StateType = KeyValueObject<Design>;
+type StateType = KeyValueObject<DesignRoute>;
 
 @State<StateType[]>({
   name: 'DesignListState',
   defaults: [
     {
-      key: Design.palette,
+      key: DesignRoute.palette,
       value: 'Палитра'
     },
     {
-      key: Design.colormode,
+      key: DesignRoute.colormode,
       value: 'Тёмный режим'
     },
     {
-      key: Design.components,
+      key: DesignRoute.components,
       value: 'Компоненты'
     }
   ],

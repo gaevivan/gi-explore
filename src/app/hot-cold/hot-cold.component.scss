@@ -1,0 +1,60 @@
+:host {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+$cell-size: 5rem;
+$gap-size: 1rem;
+$cells-count: 5;
+$gaps-count: calc(#{$cells-count} - 1);
+$field-size: calc(#{$cell-size} * #{$cells-count} + #{$gap-size} * #{$gaps-count});
+
+.hot-cold {
+  &__field {
+    height: $field-size;
+    width: $field-size;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap-size;
+  }
+  &__controls {
+    width: $field-size;
+    display: flex;
+    justify-content: center;
+  }
+  &__cell {
+    cursor: pointer;
+    height: $cell-size;
+    width: $cell-size;
+    transition: all 500ms;
+    transition-timing-function: ease;
+    background-color: #999999;
+    border-radius: 2px;
+    transform: rotateX( 0 );
+  }
+}
+
+.cell {
+  &_opened {
+    background-color: #747474;
+    transform: rotateX( 180deg );
+  }
+  &_target {
+    background-color: #45D152;
+    transform: rotateX( 180deg );
+  }
+  &_endgame {
+    transition: none;
+    transform: none;
+  }
+}
+
+.controls {
+  &_between {
+    justify-content: space-between;
+  }
+}

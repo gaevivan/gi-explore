@@ -6,10 +6,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Store } from '@ngxs/store';
+import { AppRoute } from '@shared/enums/app-route.enum';
 import { Color } from '@shared/enums/color.enum';
-import { Path } from '@shared/enums/path.enum';
 import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 import { DesignListState } from '@shared/stores/design-list/design-list.state';
+import { GameListState } from '@shared/stores/game-list/game-list.state';
 import { ProjectListState } from '@shared/stores/project-list/project-list.state';
 import { IS_MENU_OPENED } from '@shared/tokens/is-menu-opened.token';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -30,7 +31,7 @@ export class MenuComponent {
     map((itemsList: KeyValueObject[]) =>
       itemsList.map((item: KeyValueObject) => ({
         ...item,
-        key: `/${Path.projects}/${item.key}`,
+        key: `/${AppRoute.projects}/${item.key}`,
       }))
     )
   );
@@ -40,7 +41,17 @@ export class MenuComponent {
     map((itemsList: KeyValueObject[]) =>
       itemsList.map((item: KeyValueObject) => ({
         ...item,
-        key: `/${Path.design}/${item.key}`,
+        key: `/${AppRoute.design}/${item.key}`,
+      }))
+    )
+  );
+  public readonly gameList$: Observable<
+    KeyValueObject[]
+  > = this.store.select(GameListState).pipe(
+    map((itemsList: KeyValueObject[]) =>
+      itemsList.map((item: KeyValueObject) => ({
+        ...item,
+        key: `/${AppRoute.games}/${item.key}`,
       }))
     )
   );

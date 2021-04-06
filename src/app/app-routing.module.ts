@@ -1,27 +1,80 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from '@shared/components/not-found/not-found.component';
-import { Path } from '@shared/enums/path.enum';
+import { AppRoute } from '@shared/enums/app-route.enum';
+import { DesignRoute } from '@shared/enums/design-route.enum';
+import { GameRoute } from '@shared/enums/game-route.enum';
+import { ProjectRoute } from '@shared/enums/project-route.enum';
 
-const routes: Routes = [
+const ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: Path.projects,
+    redirectTo: AppRoute.projects,
   },
   {
-    path: Path.projects,
-    loadChildren: () =>
-      import('./projects-list/projects-list.module').then(
-        (module) => module.ProjectsListModule
-      ),
+    path: AppRoute.games,
+    children: [
+      {
+        path: GameRoute.headsandtails,
+        loadChildren: () =>
+          import('./random-password/random-password.module').then(
+            (module) => module.RandomPasswordModule
+          ),
+      },
+      {
+        path: GameRoute.hotcold,
+        loadChildren: () =>
+          import('./hot-cold/hot-cold.module').then(
+            (module) => module.HotColdModule
+          ),
+      },
+    ],
   },
   {
-    path: Path.design,
-    loadChildren: () =>
-      import('./design/design.module').then(
-        (module) => module.DesignModule
-      ),
+    path: AppRoute.projects,
+    children: [
+      {
+        path: ProjectRoute.randompass,
+        loadChildren: () =>
+          import('./random-password/random-password.module').then(
+            (module) => module.RandomPasswordModule
+          ),
+      },
+      {
+        path: ProjectRoute.randomvalue,
+        loadChildren: () =>
+          import('./random-value/random-value.module').then(
+            (module) => module.RandomValueModule
+          ),
+      },
+    ],
+  },
+  {
+    path: AppRoute.design,
+    children: [
+      {
+        path: DesignRoute.palette,
+        loadChildren: () =>
+          import('./palette/palette.module').then(
+            (module) => module.PaletteModule
+          ),
+      },
+      {
+        path: DesignRoute.colormode,
+        loadChildren: () =>
+          import('./color-mode/color-mode.module').then(
+            (module) => module.ColorModeModule
+          ),
+      },
+      {
+        path: DesignRoute.components,
+        loadChildren: () =>
+          import('./components-list/components-list.module').then(
+            (module) => module.ComponentsListModule
+          ),
+      },
+    ],
   },
   {
     path: '**',
@@ -30,7 +83,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
