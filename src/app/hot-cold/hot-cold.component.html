@@ -2,7 +2,7 @@
   <div class="hot-cold__controls" [class.controls_between]="cellsList$ | async">
     <button class="hot-cold__start-button" (click)="start()">new game</button>
     <ng-container *ngIf="cellsList$ | async">
-      <div class="hot-cold__text">{{status$ | async | lowercase}}</div>
+      <div class="hot-cold__text">{{status$ | async | translate | async}}</div>
       <div class="hot-cold__text">{{message$ | async | default: 'нажмите на клетку'}}</div>
     </ng-container>
   </div>

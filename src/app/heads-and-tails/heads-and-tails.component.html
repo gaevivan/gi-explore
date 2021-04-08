@@ -1,1 +1,1 @@
-<h2 [style.color]="(isRed$ | async) ? 'red' : 'blue'">{{(result$ | async) ? 'орёл' : 'решка'}}</h2>
+<h2 [style.color]="(isRed$ | async) ? 'red' : 'blue'">{{((result$ | async) ? 'head' : 'tail') | translate | async}}</h2>

@@ -10,11 +10,11 @@ import { map, pairwise, startWith, take } from 'rxjs/operators';
 const ROW_SIZE: number = 5;
 
 enum Status {
-  cold = 'Холодно',
-  colder = 'Холоднее',
-  hot = 'Горячо',
-  hotter = 'Горячее',
-  success = 'Успех',
+  cold = 'cold',
+  colder = 'colder',
+  hot = 'hot',
+  hotter = 'hotter',
+  success = 'success',
 }
 
 function getDistance(clicked: number, target: number): number {
