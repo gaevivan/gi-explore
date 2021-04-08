@@ -7,6 +7,7 @@ export const PAGES_LIST: [Route, string, Route][] = [
   [Route.design, 'цветовой режим', Route.colormode],
   [Route.design, 'компоненты', Route.components],
   [Route.design, 'палитра', Route.palette],
+  [Route.design, 'язык', Route.language],
   [Route.projects, 'авторизация', Route.auth],
   [Route.projects, 'генератор паролей', Route.randompass],
   [Route.projects, 'рандомизатор', Route.randomvalue],

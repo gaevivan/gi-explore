@@ -11,7 +11,7 @@ import { Color } from '@shared/enums/color.enum';
 import { Route } from '@shared/enums/route.enum';
 import { isNil } from '@shared/functions/is-nil.function';
 import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
-import { ColorModeState } from '@shared/stores/color-mode/color-mode.state';
+import { CurrentProjectState } from '@shared/stores/current-project/current-project.state';
 import { IS_MENU_OPENED } from '@shared/tokens/is-menu-opened.token';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
@@ -42,9 +42,7 @@ const APP_PAGES_LIST: ColumnItem[] = PAGES_LIST.filter((item) => isNil(item[0]))
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class MenuComponent {
-  public readonly color: typeof Color = Color;
-  public readonly bgColor$: Observable<Color> = this.store.select(ColorModeState);
-  public readonly textColor$: Observable<Color> = this.store.select(ColorModeState.getTextColor());
+  public readonly isDarkModeOn$: Observable<boolean> = this.store.select(CurrentProjectState.getDarkMode());
   public readonly appSectionsList$: Observable<ColumnItem[]> = of(
     APP_PAGES_LIST
   );

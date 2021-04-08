@@ -81,6 +81,16 @@ const ROUTES: Routes = [
         redirectTo: Route.palette
       },
       {
+        path: Route.lang,
+        pathMatch: 'full',
+        redirectTo: Route.language,
+      },
+      {
+        path: Route.language,
+        loadChildren: () =>
+          import('./lang/lang.module').then((module) => module.LangModule),
+      },
+      {
         path: Route.palette,
         loadChildren: () =>
           import('./palette/palette.module').then(

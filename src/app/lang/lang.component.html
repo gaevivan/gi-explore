@@ -1,0 +1,12 @@
+<div class="locale-page__content" [style.backgroundColor]="isDarkModeOn$ | async | colorMode">
+  <h3 [style.color]="isDarkModeOn$ | async | colorMode: 'text'">{{'language' | translate | async}}</h3>
+  <div class="locale-page__list">
+    <ng-container *ngFor="let localeItem of localesList">
+      <div class="locale-page__item">
+        <input type="radio" [formControl]="localeControl" [value]="localeItem" #radioItem>
+        <div [style.color]="isDarkModeOn$ | async | colorMode: 'text'" (click)="radioItem.click()">{{localeItem |
+          translate | async}}</div>
+      </div>
+    </ng-container>
+  </div>
+</div>

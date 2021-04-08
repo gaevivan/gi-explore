@@ -11,5 +11,7 @@ export enum Route {
   randomvalue = 'randomvalue',
   calc = 'calc',
   calculator = 'calculator',
-  auth = 'auth'
+  auth = 'auth',
+  lang = 'lang',
+  language = 'language'
 }

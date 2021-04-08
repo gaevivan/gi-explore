@@ -1,11 +1,11 @@
-<div class="color-mode-page__content" [style.backgroundColor]="bgColor$ | async">
-  <h3 [style.color]="textColor$ | async">Цветовой режим</h3>
+<div class="color-mode-page__content" [style.backgroundColor]="isDarkModeOn$ | async | colorMode">
+  <h3 [style.color]="isDarkModeOn$ | async | colorMode: 'text'">{{'colorMode' | translate | async}}</h3>
   <div class="color-mode-page__item">
-    <input type="radio" [formControl]="colorControl" [value]="color.bgdark" #dark>
+    <input type="radio" [formControl]="colorControl" [value]="true" #dark>
     <img src='../../assets/img/moon.png' (click)="dark.click()">
   </div>
   <div class="color-mode-page__item">
-    <input type="radio" [formControl]="colorControl" [value]="color.bglight" #light>
+    <input type="radio" [formControl]="colorControl" [value]="false" #light>
     <img src='../../assets/img/sun.png' (click)="light.click()">
   </div>
 </div>

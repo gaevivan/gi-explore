@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
 import { NgxsModule } from '@ngxs/store';
-import { ColorModeState } from '@shared/stores/color-mode/color-mode.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { CurrentProjectState } from '@shared/stores/current-project/current-project.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +14,9 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    NgxsModule.forRoot([ColorModeState]),
+    NgxsModule.forRoot([CurrentProjectState]),
     NgxsStoragePluginModule.forRoot({
-      key: [ColorModeState],
+      key: [CurrentProjectState],
     }),
   ],
   providers: [],
