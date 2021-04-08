@@ -1,8 +1,6 @@
-<div class="palette-page__content">
-  <ng-container *ngFor="let colorItem of colorsList">
-    <div class="palette-page__item" [style.backgroundColor]="colorItem.value">
-      {{colorItem.key}}
-      {{colorItem.value}}
-    </div>
-  </ng-container>
-</div>
+<ng-container *ngFor="let colorKey of colorsList">
+  <div class="palette-page__item" [style.backgroundColor]="color[colorKey]">
+    <p>{{colorKey}}</p>
+    <p>{{color[colorKey]}}</p>
+  </div>
+</ng-container>

@@ -1,13 +1,13 @@
 <div class="navbar">
-  <button (click)="openMenu()">
-    <mat-icon>menu</mat-icon>
-  </button>
+  <mat-icon class="navbar__menu-button" (click)="openMenu()">menu</mat-icon>
 </div>
 
 <ng-container *ngIf="isMenuOpened$ | async">
-  <app-menu></app-menu>
+  <div class="navbar__menu">
+    <app-menu ></app-menu>
+  </div>
 </ng-container>
 
-<div class="body" [style.background]="color$ | async">
+<div class="body">
   <router-outlet></router-outlet>
 </div>

@@ -48,6 +48,18 @@ const ROUTES: Routes = [
             (module) => module.RandomValueModule
           ),
       },
+      {
+        path: ProjectRoute.calc,
+        pathMatch: 'full',
+        redirectTo: ProjectRoute.calculator
+      },
+      {
+        path: ProjectRoute.calculator,
+        loadChildren: () =>
+          import('./calc/calc.module').then(
+            (module) => module.CalcModule
+          ),
+      },
     ],
   },
   {

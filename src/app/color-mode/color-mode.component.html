@@ -1,11 +1,11 @@
-<div class="color-mode-page__content">
-  Режим
+<div class="color-mode-page__content" [style.backgroundColor]="colorControl.value">
+  <h3 [style.color]="colorControl.value === color.bgdark ? color.bglight : color.bgdark">Цветовой режим</h3>
   <div class="color-mode-page__item">
-    <input type="radio" [formControl]="colorControl" [value]="color.bgdark">
-    <img src='../../assets/img/moon.png'>
+    <input type="radio" [formControl]="colorControl" [value]="color.bgdark" #dark>
+    <img src='../../assets/img/moon.png' (click)="dark.click()">
   </div>
   <div class="color-mode-page__item">
-    <input type="radio" [formControl]="colorControl" [value]="color.bglight">
-    <img src='../../assets/img/sun.png'>
+    <input type="radio" [formControl]="colorControl" [value]="color.bglight" #light>
+    <img src='../../assets/img/sun.png' (click)="light.click()">
   </div>
 </div>

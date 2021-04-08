@@ -1,25 +1,43 @@
-$menu-height: 44px;
+$menu-size: 60px;
 
 
 .body {
   height: 100%;
   width: 100%;
-  padding-top: $menu-height;
+  padding-left: $menu-size;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background-image: radial-gradient(white 2%, transparent 0);
-  background-size: 8vmin 8vmin;
-  z-index: 0;
+  z-index: 2;
 }
 
 .navbar {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: $menu-height;
+  width: $menu-size;
+  height: 100vh;
   z-index: 1;
   box-sizing: border-box;
-  background-color: rgba(48, 48, 48, 0.5);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, .6);
+  background-color: rgba(54, 54, 133, 0.104);
+  display: flex;
+  justify-content: center;
+
+  &__menu-button {
+    cursor: pointer;
+    padding: 1rem;
+  }
+
+  &__menu {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    height: 100%;
+    left: $menu-size;
+    padding-left: $menu-size;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
 }

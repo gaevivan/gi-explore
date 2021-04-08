@@ -1,19 +1,11 @@
-<div class="menu__content">
-  <ng-container *ngFor="let projectItem of projectList$ | async">
-    <a [href]="projectItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
-      <h3 >{{projectItem.value}}</h3>
-    </a>
-  </ng-container>
-  <br>
-  <ng-container *ngFor="let designItem of designList$ | async">
-    <a [href]="designItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
-      <h3 >{{designItem.value}}</h3>
-    </a>
-  </ng-container>
-  <br>
-  <ng-container *ngFor="let gameItem of gameList$ | async">
-    <a [href]="gameItem.key" [style.color]="'white'" (click)="$event.stopPropagation()">
-      <h3 >{{gameItem.value}}</h3>
-    </a>
-  </ng-container>
+<div class="menu__content" [style.backgroundColor]="bgColor$ | async">
+  <div class="menu__column" *ngFor="let columnItem of (appSectionsList$ | async)">
+    <h3 [style.color]="columnItem.color">{{columnItem.name}}</h3>
+    <div class="menu__list" [style.color]="columnItem.color">
+      <a class="menu__item" [style.color]="textColor$ | async" href="{{columnItem.key}}/{{rowItem.key}}" (click)="$event.stopPropagation()"
+        *ngFor="let rowItem of columnItem.children">
+        {{rowItem.value}}
+      </a>
+    </div>
+  </div>
 </div>

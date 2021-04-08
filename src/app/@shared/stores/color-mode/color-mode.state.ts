@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Action, State, StateContext } from "@ngxs/store";
+import { Action, createSelector, State, StateContext } from "@ngxs/store";
 import { Color } from "@shared/enums/color.enum";
 import { Observable, of } from "rxjs";
 import { ColorModeActions } from "./color-mode.actions";
@@ -17,4 +17,11 @@ export class ColorModeState {
     context.setState(color);
     return of(void 0);
   }
+
+  public static getTextColor(): (color: StateType) => StateType {
+    return createSelector([this], (color: StateType) =>
+      color === Color.bgdark ? Color.bglight : Color.bgdark
+    );
+  }
+  
 }

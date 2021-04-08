@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jsondb-d8a6a": {
+      "hosting": {
+        "gi-explore": [
+          "jsondb-d8a6a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jsondb-d8a6a"
+  }
+}

@@ -1,11 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
-
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { Color } from '@shared/enums/color.enum';
-import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 
 @Component({
   selector: 'app-palette',
@@ -16,8 +14,5 @@ import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 })
 export class PaletteComponent {
   public readonly color: typeof Color = Color;
-  public readonly colorsList: KeyValueObject<Color>[] = Object.keys(Color).map((key: Color) => ({
-    key,
-    value: Color[key]
-  }));
+  public readonly colorsList: string[] = Object.keys(Color);
 }

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #3222c0d5;
 }
 
 .random-value-page {
@@ -19,8 +20,10 @@
   &__generator {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
   &__add-list-input {
     display: flex;
+    gap: 4px;
   }
 }

@@ -1,25 +1,56 @@
 :host {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .menu {
+
   &__content {
-    padding: 1rem;
+    align-items: flex-start;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    width: 60%;
+  }
+
+  &__column {
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    gap: 15px;
-    border-radius: 3px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 2rem;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__item {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+
+  &__item:hover {
+    color: inherit !important;
   }
 }

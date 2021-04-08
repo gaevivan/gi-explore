@@ -19,6 +19,7 @@ import { take } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class AppComponent {
+  public readonly color: typeof Color = Color;
   public readonly color$: Observable<Color> = this.store.select(ColorModeState);
 
   constructor(

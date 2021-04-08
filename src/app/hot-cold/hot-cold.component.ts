@@ -69,7 +69,7 @@ export class HotColdComponent {
   );
   public readonly message$: Observable<string> = this.clickedIndex$.pipe(
     map((value: number) =>
-      isNil(value) ? null : `сделано кликов: ${this.openedSet.size}`
+      isNil(value) ? null : String(this.openedSet.size)
     )
   );
   public readonly isStatusSuccess$: Observable<boolean> = this.status$.pipe(

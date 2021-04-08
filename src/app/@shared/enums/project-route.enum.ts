@@ -1,4 +1,6 @@
 export enum ProjectRoute {
   randompass = 'randompass',
-  randomvalue = 'randomvalue'
+  randomvalue = 'randomvalue',
+  calc = 'calc',
+  calculator = 'calculator'
 }
