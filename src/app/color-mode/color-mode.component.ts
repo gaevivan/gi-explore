@@ -9,7 +9,7 @@ import { Store } from '@ngxs/store';
 import { Color } from '@shared/enums/color.enum';
 import { ColorModeActions } from '@shared/stores/color-mode/color-mode.actions';
 import { ColorModeState } from '@shared/stores/color-mode/color-mode.state';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-color-mode',
@@ -19,6 +19,8 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class ColorModeComponent implements OnDestroy {
+  public readonly bgColor$: Observable<Color> = this.store.select(ColorModeState);
+  public readonly textColor$: Observable<Color> = this.store.select(ColorModeState.getTextColor());
   public readonly color: typeof Color = Color;
   public readonly colorControl: FormControl = new FormControl(this.store.selectSnapshot(ColorModeState));
   private readonly subscription: Subscription = new Subscription();

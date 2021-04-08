@@ -1,29 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from '@shared/components/not-found/not-found.component';
-import { AppRoute } from '@shared/enums/app-route.enum';
-import { DesignRoute } from '@shared/enums/design-route.enum';
-import { GameRoute } from '@shared/enums/game-route.enum';
-import { ProjectRoute } from '@shared/enums/project-route.enum';
+import { Route } from '@shared/enums/route.enum';
 
 const ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: AppRoute.projects,
+    redirectTo: Route.projects,
   },
   {
-    path: AppRoute.games,
+    path: Route.games,
     children: [
       {
-        path: GameRoute.headsandtails,
+        path: '',
+        pathMatch: 'full',
+        redirectTo: Route.headsandtails
+      },
+      {
+        path: Route.headsandtails,
         loadChildren: () =>
-          import('./random-password/random-password.module').then(
-            (module) => module.RandomPasswordModule
+          import('./heads-and-tails/heads-and-tails.module').then(
+            (module) => module.HeadsAndTailsModule
           ),
       },
       {
-        path: GameRoute.hotcold,
+        path: Route.hotcold,
         loadChildren: () =>
           import('./hot-cold/hot-cold.module').then(
             (module) => module.HotColdModule
@@ -32,55 +34,68 @@ const ROUTES: Routes = [
     ],
   },
   {
-    path: AppRoute.projects,
+    path: Route.projects,
     children: [
       {
-        path: ProjectRoute.randompass,
+        path: '',
+        pathMatch: 'full',
+        redirectTo: Route.randompass
+      },
+      {
+        path: Route.randompass,
         loadChildren: () =>
           import('./random-password/random-password.module').then(
             (module) => module.RandomPasswordModule
           ),
       },
       {
-        path: ProjectRoute.randomvalue,
+        path: Route.randomvalue,
         loadChildren: () =>
           import('./random-value/random-value.module').then(
             (module) => module.RandomValueModule
           ),
       },
       {
-        path: ProjectRoute.calc,
+        path: Route.calc,
         pathMatch: 'full',
-        redirectTo: ProjectRoute.calculator
+        redirectTo: Route.calculator,
       },
       {
-        path: ProjectRoute.calculator,
+        path: Route.calculator,
         loadChildren: () =>
-          import('./calc/calc.module').then(
-            (module) => module.CalcModule
-          ),
+          import('./calc/calc.module').then((module) => module.CalcModule),
+      },
+      {
+        path: Route.auth,
+        loadChildren: () =>
+          import('./auth/auth.module').then((module) => module.AuthModule),
       },
     ],
   },
   {
-    path: AppRoute.design,
+    path: Route.design,
     children: [
       {
-        path: DesignRoute.palette,
+        path: '',
+        pathMatch: 'full',
+        redirectTo: Route.palette
+      },
+      {
+        path: Route.palette,
         loadChildren: () =>
           import('./palette/palette.module').then(
             (module) => module.PaletteModule
           ),
       },
       {
-        path: DesignRoute.colormode,
+        path: Route.colormode,
         loadChildren: () =>
           import('./color-mode/color-mode.module').then(
             (module) => module.ColorModeModule
           ),
       },
       {
-        path: DesignRoute.components,
+        path: Route.components,
         loadChildren: () =>
           import('./components-list/components-list.module').then(
             (module) => module.ComponentsListModule

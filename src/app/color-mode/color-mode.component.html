@@ -1,5 +1,5 @@
-<div class="color-mode-page__content" [style.backgroundColor]="colorControl.value">
-  <h3 [style.color]="colorControl.value === color.bgdark ? color.bglight : color.bgdark">Цветовой режим</h3>
+<div class="color-mode-page__content" [style.backgroundColor]="bgColor$ | async">
+  <h3 [style.color]="textColor$ | async">Цветовой режим</h3>
   <div class="color-mode-page__item">
     <input type="radio" [formControl]="colorControl" [value]="color.bgdark" #dark>
     <img src='../../assets/img/moon.png' (click)="dark.click()">
