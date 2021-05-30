@@ -3,6 +3,7 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,4 +11,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(titleService: Title) {
+    titleService.setTitle('Explore gi-projects');
+  }
+}
