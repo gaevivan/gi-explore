@@ -2,6 +2,10 @@ import { Locale } from '@shared/enums/locale.enum';
 
 export const LOCALE: { [key: string]: any } = {
   [Locale.ru]: {
+    authorization: 'Авторизация',
+    registration: 'Регистрация',
+    enter: 'Войти',
+    register: 'Зарегистрироваться',
     cold: 'Холодно',
     colder: 'Холоднее',
     hot: 'Горячо',
@@ -15,6 +19,10 @@ export const LOCALE: { [key: string]: any } = {
     en: 'Английский',
   },
   [Locale.en]: {
+    authorization: 'Authorization',
+    registration: 'Registration',
+    enter: 'Sign in',
+    register: 'Sign up',
     cold: 'Cold',
     colder: 'Colder',
     hot: 'Hot',

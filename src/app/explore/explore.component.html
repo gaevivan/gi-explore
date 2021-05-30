@@ -1,0 +1,11 @@
+<div class="explore__filters">
+  <input type="text" [formControl]="searchControl" placeholder="Поиск...">
+</div>
+<div class="explore__list">
+  <ng-container *ngFor="let exploreItem of (exploreList$ | async)">
+    <div [style.color]="getRandomColor()">
+      <div class="explore__item" (click)="openPage(exploreItem)">{{exploreItem.title}}</div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isEmptySearchResult$ | async">Ничего не найдено</ng-container>
+</div>

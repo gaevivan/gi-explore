@@ -3,7 +3,7 @@ export enum Color {
   orange = '#F9AA3A',
   yellow = '#FFC927',
   green = '#45D152',
-  blue = '#328fff',
+  blue = '#4C9AFF',
   bgdark = '#3F566E',
   bglight = '#EBECF0',
   light = '#999999',

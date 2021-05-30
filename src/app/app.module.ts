@@ -1,12 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from '@shared/shared.module';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { CurrentProjectState } from '@shared/stores/current-project/current-project.state';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,10 +11,10 @@ import { CurrentProjectState } from '@shared/stores/current-project/current-proj
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    NgxsModule.forRoot([CurrentProjectState]),
-    NgxsStoragePluginModule.forRoot({
-      key: [CurrentProjectState],
-    }),
+    // NgxsModule.forRoot([CurrentProjectState]),
+    // NgxsStoragePluginModule.forRoot({
+    //   key: [CurrentProjectState],
+    // }),
   ],
   providers: [],
   bootstrap: [AppComponent],

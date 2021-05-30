@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from '@shared/components/not-found/not-found.component';
 import { Route } from '@shared/enums/route.enum';
 
 const ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: Route.projects,
+    redirectTo: Route.explore,
+  },
+  {
+    path: Route.explore,
+    loadChildren: () =>
+      import('./explore/explore.module').then((module) => module.ExploreModule),
   },
   {
     path: Route.games,
@@ -15,60 +19,14 @@ const ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: Route.headsandtails
+        redirectTo: Route['heads-and-tails'],
       },
       {
-        path: Route.headsandtails,
+        path: Route['heads-and-tails'],
         loadChildren: () =>
           import('./heads-and-tails/heads-and-tails.module').then(
             (module) => module.HeadsAndTailsModule
           ),
-      },
-      {
-        path: Route.hotcold,
-        loadChildren: () =>
-          import('./hot-cold/hot-cold.module').then(
-            (module) => module.HotColdModule
-          ),
-      },
-    ],
-  },
-  {
-    path: Route.projects,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: Route.randompass
-      },
-      {
-        path: Route.randompass,
-        loadChildren: () =>
-          import('./random-password/random-password.module').then(
-            (module) => module.RandomPasswordModule
-          ),
-      },
-      {
-        path: Route.randomvalue,
-        loadChildren: () =>
-          import('./random-value/random-value.module').then(
-            (module) => module.RandomValueModule
-          ),
-      },
-      {
-        path: Route.calc,
-        pathMatch: 'full',
-        redirectTo: Route.calculator,
-      },
-      {
-        path: Route.calculator,
-        loadChildren: () =>
-          import('./calc/calc.module').then((module) => module.CalcModule),
-      },
-      {
-        path: Route.auth,
-        loadChildren: () =>
-          import('./auth/auth.module').then((module) => module.AuthModule),
       },
     ],
   },
@@ -78,17 +36,7 @@ const ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: Route.palette
-      },
-      {
-        path: Route.lang,
-        pathMatch: 'full',
-        redirectTo: Route.language,
-      },
-      {
-        path: Route.language,
-        loadChildren: () =>
-          import('./lang/lang.module').then((module) => module.LangModule),
+        redirectTo: Route.palette,
       },
       {
         path: Route.palette,
@@ -97,25 +45,7 @@ const ROUTES: Routes = [
             (module) => module.PaletteModule
           ),
       },
-      {
-        path: Route.colormode,
-        loadChildren: () =>
-          import('./color-mode/color-mode.module').then(
-            (module) => module.ColorModeModule
-          ),
-      },
-      {
-        path: Route.components,
-        loadChildren: () =>
-          import('./components-list/components-list.module').then(
-            (module) => module.ComponentsListModule
-          ),
-      },
     ],
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
   },
 ];
 

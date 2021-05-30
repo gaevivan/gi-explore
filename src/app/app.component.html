@@ -1,13 +1,7 @@
-<div class="navbar">
-  <mat-icon class="navbar__menu-button" (click)="openMenu()">menu</mat-icon>
-</div>
-
-<ng-container *ngIf="isMenuOpened$ | async">
-  <div class="navbar__menu">
-    <app-menu ></app-menu>
-  </div>
-</ng-container>
-
-<div class="body">
+<div class="app__page">
   <router-outlet></router-outlet>
+</div>
+<div class="app__credentials">
+  gaevivan
+  <a href="https://github.com/gaevivan">github</a>
 </div>

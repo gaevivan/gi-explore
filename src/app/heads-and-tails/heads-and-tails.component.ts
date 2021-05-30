@@ -4,7 +4,9 @@ import {
   HostListener,
   ViewEncapsulation,
 } from '@angular/core';
+import { Color } from '@shared/enums/color.enum';
 import { BehaviorSubject } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-heads-and-tails',
@@ -14,17 +16,17 @@ import { BehaviorSubject } from 'rxjs';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class HeadsAndTailsComponent {
-  public readonly result$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+  public readonly result$: BehaviorSubject<string> = new BehaviorSubject<string>(
     null
   );
-  public readonly isRed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  public readonly color$: BehaviorSubject<Color.red | Color.blue> = new BehaviorSubject<Color.red>(Color.red);
 
   @HostListener('click')
   public toss(): void {
     window.getSelection().removeAllRanges();
     const randomNumber: number = Math.round(Math.random());
-    const result: boolean = Boolean(randomNumber);
+    const result: string = Boolean(randomNumber) ? 'Орёл' : 'Решка';
+    this.color$.pipe(take(1)).subscribe((color: Color) => this.color$.next(color === Color.red ? Color.blue: Color.red))
     this.result$.next(result);
-    this.isRed$.next(!this.isRed$.value);
   }
 }

@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -12,10 +11,4 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NotFoundComponent {
-  constructor(private readonly location: Location) {}
-
-  public back(): void {
-    this.location.back();
-  }
-}
+export class NotFoundComponent {}

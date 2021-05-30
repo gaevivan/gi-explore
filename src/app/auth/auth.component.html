@@ -1,1 +1,38 @@
-<p>auth works!</p>
+  <ng-container *ngIf="isSignIn$ | async; else signUpTemplate" [ngTemplateOutlet]="signInTemplate"></ng-container>
+
+<ng-template #signUpTemplate>
+  <div class="auth__container" *ngIf="signUpControl">
+    <div class="auth__item">
+      <tui-input tuiTextfieldSize="m" type="text" [formControl]="signUpControl?.controls?.login">Логин</tui-input>
+    </div>
+    <div class="auth__item">
+      <tui-input tuiTextfieldSize="m" type="text" [formControl]="signUpControl?.controls?.password">Пароль</tui-input>
+    </div>
+    <div class="auth__item">
+      <tui-input tuiTextfieldSize="m" type="text" [formControl]="signUpControl?.controls?.verify">Verify</tui-input>
+    </div>
+    <div class="auth__item">
+      <button type="button" size="s" tuiButton (click)="signUp()">{{'register' | translate | async}}</button>
+    </div>
+      <a class="auth__item" tuiLink routerLink="/{{projects}}/{{signInRoute}}" class="auth__item">{{'authorization' | translate | async}}</a>
+  </div>
+</ng-template>
+
+<ng-template #signInTemplate>
+  <div class="auth__container" *ngIf="signInControl">
+    <div class="auth__item">
+      <label>Логин</label>
+      <input type="text" [formControl]="signInControl?.controls?.login">
+    </div>
+    <div class="auth__item">
+      <label>Пароль</label>
+      <input type="text" [formControl]="signInControl?.controls?.password">
+    </div>
+    <div>
+      <label>Запомнить</label>
+      <input type="checkbox" [formControl]="signInControl?.controls?.remember">
+    </div>
+    <button class="auth__item" size="s" tuiButton (click)="signIn()">{{'enter' | translate | async}}</button>
+    <a tuiLink routerLink="/{{projects}}/{{signUpRoute}}" class="auth__item">{{'registration' | translate | async}}</a>
+  </div>
+</ng-template>

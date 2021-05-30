@@ -4,8 +4,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { InteractiveColor } from '@shared/enums/button-color.enum';
 import { Color } from '@shared/enums/color.enum';
-import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 
 @Component({
   selector: 'app-components-list',
@@ -16,14 +16,14 @@ import { KeyValueObject } from '@shared/interfaces/key-value-object.interface';
 })
 export class ComponentsListComponent {
   public readonly color: typeof Color = Color;
+  public readonly interactiveColor: typeof InteractiveColor = InteractiveColor;
   public readonly radioControl: FormControl = new FormControl(1);
   public readonly inputsArray: unknown[] = new Array(5);
-  public readonly colorsArray: Color[] = [
-    Color.blue,
-    Color.red,
-    Color.yellow,
-    Color.dark,
-    Color.orange,
-    Color.green,
+  public readonly colorsArray: InteractiveColor[] = [
+    InteractiveColor.default,
+    InteractiveColor.error,
+    InteractiveColor.primary,
+    InteractiveColor.success,
+    InteractiveColor.warning,
   ];
 }

@@ -36,3 +36,17 @@
     <mat-icon>menu</mat-icon>
   </div>
 </div>
+<div class="components__thin-block">
+  <div class="components__block-header">Icon-buttons</div>
+  <ng-container *ngFor="let colorItem of colorsArray">
+    <div class="components__item">
+      <app-icon-button icon="menu" size="s" [color]="colorItem"></app-icon-button>
+    </div>
+    <div class="components__item">
+      <app-icon-button icon="menu" size="m" [color]="colorItem"></app-icon-button>
+    </div>
+    <div class="components__item">
+      <app-icon-button icon="menu" size="l" [color]="colorItem"></app-icon-button>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,15 @@
+$card-width: 100px;
+$card-height: 50px;
+$card-border-radius: 2px;
+
+:host {
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  width: $card-width;
+  height: $card-height;
+  border-radius: $card-border-radius;
+  // border: 1px solid silver;
+  font-size: 1em;
+  background-color: rgba(192, 192, 192, 0.466);
+}

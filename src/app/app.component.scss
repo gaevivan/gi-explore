@@ -1,43 +1,43 @@
-$menu-size: 60px;
-
-
-.body {
-  height: 100%;
-  width: 100%;
-  padding-left: $menu-size;
-  box-sizing: border-box;
+:host {
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background: linear-gradient(0deg, #f44a332f, #328eff3d, #ffc92731);
+  background-size: 300% 300%;
+  animation: gradient 15s linear infinite;
 }
 
-.navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: $menu-size;
-  height: 100vh;
-  z-index: 1;
-  box-sizing: border-box;
-  box-shadow: 0 0px 2px rgba(0, 0, 0, .6);
-  background-color: rgba(54, 54, 133, 0.104);
-  display: flex;
-  justify-content: center;
-
-  &__menu-button {
-    cursor: pointer;
-    padding: 1rem;
+@keyframes gradient {
+  0% {
+    background-position: 50% 0%;
   }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
 
-  &__menu {
-    background-color: rgba(0, 0, 0, 0.7);
+.app {
+  &__page {
+    min-height: 0;
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+  &__credentials {
+    flex-shrink: 0;
+    width: fit-content;
     box-sizing: border-box;
-    height: 100%;
-    left: $menu-size;
-    padding-left: $menu-size;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 3;
+    padding: 1rem;
+    color: darkslategray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 }

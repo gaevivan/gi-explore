@@ -1,19 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuComponent } from './components/menu/menu.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { MatIconModule } from '@angular/material/icon';
+import { CardComponent } from './components/card/card.component';
 import { DefaultPipe } from './pipes/default.pipe';
-import { TranslatePipe } from './pipes/translate.pipe';
-import { ColorModePipe } from './pipes/color-mode.pipe';
 
-const MODULES: any[] = [FormsModule, ReactiveFormsModule, CommonModule, MatIconModule];
-const COMPONENTS: any[] = [NotFoundComponent, MenuComponent];
-const PIPES: any[] = [DefaultPipe, ColorModePipe, TranslatePipe];
+const MODULES: any[] = [FormsModule, ReactiveFormsModule, CommonModule];
+const COMPONENTS: any[] = [CardComponent];
+const PIPES: any[] = [DefaultPipe];
 
 @NgModule({
-  declarations: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES, CardComponent],
   imports: [...MODULES],
   exports: [...MODULES, ...COMPONENTS, ...PIPES],
 })
