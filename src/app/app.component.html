@@ -1,3 +1,6 @@
+<div class="app__nav" *ngIf="notExplore$ | async">
+  <button (click)="toList()">К списку</button>
+</div>
 <div class="app__page">
   <router-outlet></router-outlet>
 </div>

@@ -3,5 +3,8 @@ export enum Route {
   palette = 'palette',
   'heads-and-tails' = 'heads-and-tails',
   design = 'design',
-  games = 'games'
+  games = 'games',
+  'hot-and-cold' = 'hot-and-cold',
+  projects = 'projects',
+  'am-i-cool' = 'am-i-cool'
 }

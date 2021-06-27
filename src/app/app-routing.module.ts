@@ -28,6 +28,13 @@ const ROUTES: Routes = [
             (module) => module.HeadsAndTailsModule
           ),
       },
+      {
+        path: Route['hot-and-cold'],
+        loadChildren: () =>
+          import('./hot-cold/hot-cold.module').then(
+            (module) => module.HotColdModule
+          ),
+      },
     ],
   },
   {
@@ -43,6 +50,23 @@ const ROUTES: Routes = [
         loadChildren: () =>
           import('./palette/palette.module').then(
             (module) => module.PaletteModule
+          ),
+      },
+    ],
+  },
+  {
+    path: Route.projects,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: Route['am-i-cool'],
+      },
+      {
+        path: Route['am-i-cool'],
+        loadChildren: () =>
+          import('./am-i-cool/am-i-cool.module').then(
+            (module) => module.AmICoolModule
           ),
       },
     ],

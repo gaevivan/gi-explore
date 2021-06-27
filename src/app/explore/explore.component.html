@@ -1,5 +1,8 @@
 <div class="explore__filters">
   <input type="text" [formControl]="searchControl" placeholder="Поиск...">
+  <button (click)="editFilter(route.games)" [class.selected]="(filters$ | async).includes(route.games)">Игры</button>
+  <button (click)="editFilter(route.design)" [class.selected]="(filters$ | async).includes(route.design)">Дизайн</button>
+  <button (click)="editFilter(route.projects)" [class.selected]="(filters$ | async).includes(route.projects)">Проекты</button>
 </div>
 <div class="explore__list">
   <ng-container *ngFor="let exploreItem of (exploreList$ | async)">

@@ -9,13 +9,13 @@ import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-heads-and-tails',
-  templateUrl: './heads-and-tails.component.html',
-  styleUrls: ['./heads-and-tails.component.scss'],
+  selector: 'app-am-i-cool',
+  templateUrl: './am-i-cool.component.html',
+  styleUrls: ['./am-i-cool.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HeadsAndTailsComponent {
+export class AmICoolComponent {
   public readonly result$: BehaviorSubject<string> = new BehaviorSubject<string>(
     null
   );

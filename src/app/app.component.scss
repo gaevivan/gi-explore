@@ -27,7 +27,6 @@
     flex-shrink: 1;
     flex-grow: 1;
     width: 100%;
-    border-bottom: 1px solid black;
   }
   &__credentials {
     flex-shrink: 0;
@@ -39,5 +38,12 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+  }
+  &__nav {
+    flex-shrink: 0;
+    width: fit-content;
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
   }
 }
