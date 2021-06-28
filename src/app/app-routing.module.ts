@@ -69,6 +69,13 @@ const ROUTES: Routes = [
             (module) => module.AmICoolModule
           ),
       },
+      {
+        path: Route.stopwatch,
+        loadChildren: () =>
+          import('./stopwatch/stopwatch.module').then(
+            (module) => module.StopwatchModule
+          ),
+      },
     ],
   },
 ];

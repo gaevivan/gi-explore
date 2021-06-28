@@ -39,6 +39,11 @@ const exploreList: ExploreItem[] = [
     route: Route['am-i-cool'],
     parentRoute: Route.projects,
   },
+  {
+    title: 'Секундомер',
+    route: Route.stopwatch,
+    parentRoute: Route.projects
+  }
 ];
 
 @Component({
