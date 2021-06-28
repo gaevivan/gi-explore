@@ -3,7 +3,7 @@ import { isNil } from '@shared/functions/is-nil.function';
 import { BehaviorSubject, Observable, Subscription, timer } from 'rxjs';
 import { map, take, withLatestFrom } from 'rxjs/operators';
 
-const INIT_TIME: Date = new Date(0, 0, 0);
+const INIT_TIME: Date = new Date(0, 0, 0, 0, 0, 0);
 
 @Component({
   selector: 'app-stopwatch',
@@ -46,12 +46,7 @@ export class StopwatchComponent {
           this.isPauseDisabled$.next(false);
         }
         const newTime: Date = new Date(
-          null,
-          null,
-          null,
-          null,
-          null,
-          time.getSeconds() + 1
+          time.getTime() + 1000
         );
         this.time$.next(newTime);
       });
