@@ -1,0 +1,27 @@
+@import '/src/assets/scss/mixins.scss';
+@import '/src/assets/scss/colors.scss';
+@import '/src/assets/scss/adaptive.scss';
+
+.menu {
+  height: 100%;
+  width: 100%;
+  gap: 5rem;
+  @include flex-container(column, center, space-between, nowrap);
+  @include xs() {
+    @include flex-container(row, center, space-between, nowrap);
+  }
+  &__item {
+    height: 10rem;
+    width: 10rem;
+    @include gt-md() {
+      height: 12rem;
+      width: 12rem;
+    }
+    @include gt-xlg() {
+      height: 14rem;
+      width: 14rem;
+    }
+    cursor: pointer;
+    color: $dark-3;
+  }
+}

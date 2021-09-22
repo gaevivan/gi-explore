@@ -1,49 +1,70 @@
+@import '/src/assets/scss/mixins.scss';
+@import '/src/assets/scss/adaptive.scss';
+
 :host {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  align-items: center;
-  background: linear-gradient(0deg, #f44a332f, #328eff3d, #ffc92731);
-  background-size: 300% 300%;
-  animation: gradient 15s linear infinite;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 50% 0%;
+.root {
+  @include flex-container(row, center, center, nowrap);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3rem;
+  gap: 3rem;
+  background-color: $light-3;
+  @include xs() {
+    @include flex-container(column, center, center, nowrap);
   }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-.app {
   &__page {
-    min-height: 0;
-    flex-shrink: 1;
-    flex-grow: 1;
+    flex: 1 1;
+    height: 100%;
     width: 100%;
+    box-shadow: 0 0 1rem 1rem rgba($color: $dark-3, $alpha: 0.2);
+    border-radius: 2px;
+    border-color: transparent;
+    background-color: $white;
+    overflow: auto;
+    &_dark-theme {
+      background-color: $light-2;
+    }
   }
-  &__credentials {
-    flex-shrink: 0;
-    width: fit-content;
-    box-sizing: border-box;
-    padding: 1rem;
-    color: darkslategray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  & app-menu {
+    height: 100%;
+    @include xs() {
+      height: fit-content;
+      width: 100%;
+    }
   }
-  &__nav {
-    flex-shrink: 0;
-    width: fit-content;
-    box-sizing: border-box;
-    padding: 1rem;
-    width: 100%;
+  &_dark-theme {
+    background-color: $dark-7;
   }
 }
+
+// .app {
+//   &__page {
+//     min-height: 0;
+//     flex-shrink: 1;
+//     flex-grow: 1;
+//     width: 100%;
+//   }
+//   &__credentials {
+//     flex-shrink: 0;
+//     width: fit-content;
+//     box-sizing: border-box;
+//     padding: 1rem;
+//     color: darkslategray;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 0.5rem;
+//   }
+//   &__nav {
+//     flex-shrink: 0;
+//     width: fit-content;
+//     box-sizing: border-box;
+//     padding: 1rem;
+//     width: 100%;
+//   }
+// }

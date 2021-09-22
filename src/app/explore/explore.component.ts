@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Color } from '@shared/enums/color.enum';
 import { Route } from '@shared/enums/route.enum';
 import { isNil } from '@shared/functions/is-nil.function';
 import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
@@ -19,11 +18,6 @@ interface ExploreItem {
 }
 
 const exploreList: ExploreItem[] = [
-  {
-    title: 'Палитра',
-    route: Route.palette,
-    parentRoute: Route.design,
-  },
   {
     title: 'Орёл & Решка',
     route: Route['heads-and-tails'],
@@ -72,20 +66,6 @@ export class ExploreComponent {
   public openPage(exploreItem: ExploreItem): void {
     const url: string = `${exploreItem.parentRoute}/${exploreItem.route}`;
     this.router.navigateByUrl(url);
-  }
-
-  public getRandomColor(): Color {
-    const colorsList: Color[] = [
-      Color.blue,
-      Color.red,
-      Color.green,
-      Color.orange,
-      Color.orange,
-    ];
-    const randomIndex: number = Math.round(
-      Math.random() * (colorsList.length - 1)
-    );
-    return colorsList[randomIndex];
   }
 
   public editFilter(filterType: Route): void {

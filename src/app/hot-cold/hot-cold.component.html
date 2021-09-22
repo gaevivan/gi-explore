@@ -1,21 +1,18 @@
 <div class="hot-cold__content">
-  <div class="hot-cold__controls" [class.controls_between]="cellsList$ | async">
-    <button class="green" (click)="start()">new game</button>
-    <ng-container *ngIf="cellsList$ | async">
-      <div class="hot-cold__text">{{status$ | async}}</div>
-      <div class="hot-cold__text">{{message$ | async | default: 'нажмите на клетку'}}</div>
-    </ng-container>
-  </div>
+  <button (click)="start()">new game</button>
   <ng-container *ngIf="cellsList$ | async">
     <div class="hot-cold__field">
       <ng-container *ngFor="let cell of cellsList$ | async; let index = index">
-        <div class="hot-cold__cell" 
-          [class.cell_opened]="openedSet.has(index)"
+        <div class="hot-cold__cell" [class.cell_opened]="openedSet.has(index)"
           [class.cell_target]="openedSet.has(index) && cell"
-          [class.cell_endgame]="(isStatusSuccess$ | async) || (openedSet.size === 0)"
-          (click)="open(index)">
+          [class.cell_endgame]="(isStatusSuccess$ | async) || (openedSet.size === 0)" (click)="open(index)">
         </div>
       </ng-container>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="cellsList$ | async">
+    <div class="hot-cold__text">
+      {{status$ | async | default: 'Нажмите на клетку'}} (clicks: {{message$ | async | default: 0}})
     </div>
   </ng-container>
 </div>

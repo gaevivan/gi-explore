@@ -3,8 +3,8 @@
     {{time$ | async | date: 'HH:mm:ss'}}
   </div>
   <div class="stopwatch__controls">
-    <button (click)="start()" [disabled]="isStartDisabled$ | async">⏵</button>
-    <button (click)="pause()" [disabled]="isPauseDisabled$ | async">⏸</button>
-    <button (click)="reset()" [disabled]="isResetDisabled$ | async">Сброс</button>
+    <button (click)="start()" [disabled]="isStartDisabled$ | async">start</button>
+    <button (click)="pause()" [disabled]="isPauseDisabled$ | async">pause</button>
+    <button (click)="reset()" [disabled]="isResetDisabled$ | async">reset</button>
   </div>
 </div>

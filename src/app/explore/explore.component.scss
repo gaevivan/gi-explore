@@ -1,34 +1,65 @@
+@import '/src/assets/scss/mixins.scss';
+@import '/src/assets/scss/colors.scss';
+@import '/src/assets/scss/adaptive.scss';
+
 :host {
   display: flex;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 4rem;
   flex-direction: column;
+  min-width: 100rem;
+  & * {
+    font-size: 6rem;
+  }
+}
+
+.selected {
+  background-color: $yellow-1;
 }
 
 .explore {
   &__filters {
-    display: flex;
-    flex-shrink: 0;
+    @include flex-container(row, center, flex-start, wrap);
+    flex: 0 0;
     box-sizing: border-box;
-    padding-bottom: 2rem;
-    align-items: center;
-    gap: 0.5rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
+    width: 100%;
+    & input, & button {
+      font-size: 5rem;
+      @include xs() {
+        font-size: 7rem;
+      }
+      @include gt-xlg() {
+        font-size: 7rem;
+      }
+    }
+  }
+  &__filters-search {
+    max-width: 100%;
+    box-sizing: border-box;
   }
   &__list {
     flex-shrink: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     overflow-y: auto;
+    @include xs() {
+      gap: 2rem;
+    }
   }
   &__item {
-    font-size: 2.5rem;
-    font-weight: bold;
+    @include xs() {
+      font-size: 8rem;
+    }
+    @include gt-xlg() {
+      font-size: 9rem;
+    }
+    @include bold();
     cursor: pointer;
-    width: fit-content;
-    color: black;
   }
   &__item::after {
     position: relative;

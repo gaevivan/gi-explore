@@ -1,3 +1,4 @@
 export enum Icon {
-  menu = 'menu'
+  apps = 'apps',
+  home = 'home'
 }

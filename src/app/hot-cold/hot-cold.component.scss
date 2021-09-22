@@ -1,75 +1,67 @@
+@import '/src/assets/scss/mixins.scss';
+@import '/src/assets/scss/adaptive.scss';
+@import '/src/assets/scss/colors.scss';
+
 :host {
-  display: flex;
   height: 100%;
   width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-container(column, center, center);
+  * {
+    font-size: 5rem;
+  }
+  min-width: 90rem;
 }
-
-$cell-size: 5rem;
-$gap-size: 1rem;
-$cells-count: 5;
-$gaps-count: calc(#{$cells-count} - 1);
-$field-size: calc(#{$cell-size} * #{$cells-count} + #{$gap-size} * #{$gaps-count});
-$font-size: 1rem;
 
 .hot-cold {
   &__content {
-    border-radius: 4px;
+    border-radius: 1rem;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    @include flex-container(column, center, center);
+    gap: 2rem;
     padding: 2rem;
   }
 
   &__text {
     box-sizing: border-box;
-    font-size: $font-size;
-    padding: 4px;
+    padding: 1rem;
   }
 
   &__field {
-    height: $field-size;
-    width: $field-size;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $gap-size;
-  }
-  &__controls {
-    display: flex;
-    justify-content: center;
+    height: 80rem;
+    width: 80rem;
+    @include gt-md() {
+      height: 110rem;
+      width: 110rem;
+    }
+    @include gt-xlg() {
+      height: 130rem;
+      width: 130rem;
+    }
+    @include flex-container(column, center, center, wrap);
   }
   &__cell {
     cursor: pointer;
-    height: $cell-size;
-    width: $cell-size;
+    height: 20%;
+    width: 20%;
     transition: all 500ms;
+    box-shadow: 0 0 1px 0 $dark-4;
     transition-timing-function: ease;
-    background-color: #999999;
-    border-radius: 2px;
+    background-color: $blue-1;
     transform: rotateX( 0 );
   }
 }
 
 .cell {
   &_opened {
-    background-color: #747474;
+    background-color: $red-1;
     transform: rotateX( 180deg );
   }
   &_target {
-    background-color: #4C9AFF;
+    background-color: $green-4;
     transform: rotateX( 180deg );
   }
   &_endgame {
     transition: none;
     transform: none;
-  }
-}
-
-.controls {
-  &_between {
-    justify-content: space-between;
   }
 }

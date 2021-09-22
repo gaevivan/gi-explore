@@ -1,0 +1,59 @@
+$white: white;
+$black: black;
+
+$dark-1: #d6dbdd;
+$dark-2: #c2c9cc;
+$dark-3: #627177;
+$dark-4: #425760;
+$dark-5: #334a54;
+$dark-6: #213a45;
+$dark-7: #0f2a36;
+$dark-8: #001d29;
+$dark-9: #001720;
+
+$light-1: #f5f6f7;
+$light-2: #ebedee;
+$light-3: #dee2e3;
+$light-4: #d4d9db;
+$light-5: #b3bcbf;
+$light-6: #687a82;
+$light-7: #3d5159;
+
+$blue-1: #dceeff;
+$blue-2: #9dd0ff;
+$blue-3: #6cb8ff;
+$blue-4: #198bf5;
+$blue-5: #0070d8;
+$blue-6: #0065c3;
+
+$green-1: #c6f7e7;
+$green-2: #7ef1cb;
+$green-3: #12e9a1;
+$green-4: #08d892;
+$green-5: #08b87d;
+$green-6: #00a46d;
+
+$red-1: #fde1d9;
+$red-2: #fab19a;
+$red-3: #f89678;
+$red-4: #ed6439;
+$red-5: #f05625;
+$red-6: #e14c1d;
+
+$yellow-1: #fff2c3;
+$yellow-2: #ffe589;
+$yellow-3: #ffe072;
+$yellow-4: #ffdb5b;
+$yellow-5: #ffd333;
+$yellow-6: #fdcc13;
+
+$colors: ();
+
+@mixin generate-colors() {
+  :root {
+    @each $name, $value in $colors {
+      --color_#{$name}: #{$value};
+      --color_#{$name}-rgb: #{red($value), green($value), blue($value)};
+    }
+  }
+}

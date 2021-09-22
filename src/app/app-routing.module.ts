@@ -38,23 +38,6 @@ const ROUTES: Routes = [
     ],
   },
   {
-    path: Route.design,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: Route.palette,
-      },
-      {
-        path: Route.palette,
-        loadChildren: () =>
-          import('./palette/palette.module').then(
-            (module) => module.PaletteModule
-          ),
-      },
-    ],
-  },
-  {
     path: Route.projects,
     children: [
       {

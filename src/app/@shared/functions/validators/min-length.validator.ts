@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { ErrorType } from '@shared/enums/error-type.enum';
 import { ErrorPayload } from '@shared/interfaces/error-payload.interface';
 import { isNil } from '../is-nil.function';

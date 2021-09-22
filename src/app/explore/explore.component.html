@@ -1,14 +1,14 @@
 <div class="explore__filters">
-  <input type="text" [formControl]="searchControl" placeholder="Поиск...">
+  <input class="explore__filters-search" type="text" [formControl]="searchControl" placeholder="Поиск...">
   <button (click)="editFilter(route.games)" [class.selected]="(filters$ | async).includes(route.games)">Игры</button>
-  <button (click)="editFilter(route.design)" [class.selected]="(filters$ | async).includes(route.design)">Дизайн</button>
-  <button (click)="editFilter(route.projects)" [class.selected]="(filters$ | async).includes(route.projects)">Проекты</button>
+  <button (click)="editFilter(route.design)"
+    [class.selected]="(filters$ | async).includes(route.design)">Дизайн</button>
+  <button (click)="editFilter(route.projects)"
+    [class.selected]="(filters$ | async).includes(route.projects)">Проекты</button>
 </div>
 <div class="explore__list">
   <ng-container *ngFor="let exploreItem of (exploreList$ | async)">
-    <div [style.color]="getRandomColor()">
-      <div class="explore__item" (click)="openPage(exploreItem)">{{exploreItem.title}}</div>
-    </div>
+    <div randomColor class="explore__item" (click)="openPage(exploreItem)">{{exploreItem.title}}</div>
   </ng-container>
   <ng-container *ngIf="isEmptySearchResult$ | async">Ничего не найдено</ng-container>
 </div>

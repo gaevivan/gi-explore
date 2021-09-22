@@ -1,4 +1,4 @@
-<div class="app__nav" *ngIf="notExplore$ | async">
+<!-- <div class="app__nav" *ngIf="notExplore$ | async">
   <button (click)="toList()">К списку</button>
 </div>
 <div class="app__page">
@@ -7,4 +7,11 @@
 <div class="app__credentials">
   gaevivan
   <a href="https://github.com/gaevivan">github</a>
+</div> -->
+
+<div class="root" [class.root_dark-theme]="isDarkTheme(theme$ | async)">
+  <div class="root__page" [class.root__page_dark-theme]="isDarkTheme(theme$ | async)">
+    <router-outlet></router-outlet>
+  </div>
+  <app-menu></app-menu>
 </div>

@@ -1,0 +1,73 @@
+@use 'sass:map';
+@import './mixins.scss';
+@import './colors.scss';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 4px;
+  outline: none !important;
+  @include regular;
+  @include generate-colors();
+}
+
+* {
+  font-size: 4rem;
+}
+
+// input[type=text] {
+//   border-radius: 2px;
+//   outline: none;
+//   border: 1px solid black;
+//   min-height: 2rem;
+//   font-size: inherit;
+//   padding: 5px;
+//   background: transparent;
+// }
+
+// button {
+//   font-family: 'Courier New', Courier, monospace;
+//   border-radius: 1;
+//   border: 1px solid white;
+//   box-sizing: border-box;
+//   background: rgba(110, 110, 110, 0.3);
+//   color: white;
+//   cursor: pointer;
+//   height: fit-content;
+//   width: fit-content;
+//   min-height: 2.5rem;
+//   min-width: 3.5rem;
+//   font-size: 14pt;
+//   padding: 0.3rem 0.5rem;
+//   position: relative;
+//   outline: none;
+//   &:hover {
+//     background: rgba(70, 70, 70, 0.3);
+//   }
+//   &:disabled {
+//     opacity: 0.5;
+//     cursor: not-allowed;
+//     pointer-events: none;
+//   }
+// }
+// button.selected:before {
+//   position: absolute;
+//   left: -1px;
+//   top: 0;
+//   height: 100%;
+//   content: '';
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-width: 0.5rem 0.5rem 0 0;
+//   border-color: white transparent transparent transparent;
+// }
+// button.green {
+//   background: #45d1537c;
+//   &:hover {
+//     background: #37a5427c;
+//   }
+// }
