@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Icon } from '@shared/enums/icon.enum';
 import { Route } from '@shared/enums/route.enum';
@@ -18,6 +18,7 @@ interface MenuItem {
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class MenuComponent {
   public readonly menu: MenuItem[] = [
@@ -46,6 +47,10 @@ export class MenuComponent {
       .subscribe((theme: Theme) =>
         this.theme$.next(theme === Theme.dark ? Theme.light : Theme.dark)
       );
+  }
+
+  public isDarkTheme(theme: Theme): boolean {
+    return theme === Theme.dark;
   }
 
   public toMain(): void {

@@ -25,6 +25,9 @@
     }
     user-select: none;
     cursor: pointer;
-    color: $main-4;
+    color: $main-7;
+    &_dark-theme {
+      color: $main-5;
+    }
   }
 }

@@ -13,9 +13,12 @@
   box-sizing: border-box;
   padding: 3rem;
   gap: 3rem;
-  background-color: $main-3;
+  background-color: $main-2;
   @include xs() {
     @include flex-container(column, center, center, nowrap);
+  }
+  &_dark-theme {
+    background-color: $main-9;
   }
   &__page {
     flex: 1 1;
@@ -24,10 +27,10 @@
     box-shadow: 0 0 1rem 1rem rgba($color: $main-4, $alpha: 0.2);
     border-radius: 2px;
     border-color: transparent;
-    background-color: white;
+    background-color: $main-1;
     overflow: auto;
     &_dark-theme {
-      background-color: $main-2;
+      background-color: $main-3;
     }
   }
   & app-menu {
@@ -36,8 +39,5 @@
       height: fit-content;
       width: 100%;
     }
-  }
-  &_dark-theme {
-    background-color: $main-7;
   }
 }

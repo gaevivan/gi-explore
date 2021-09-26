@@ -1,5 +1,4 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import { Color } from '@shared/enums/color.enum';
 import { RandomColorService } from '@shared/services/random-color.service';
 
 @Directive({
