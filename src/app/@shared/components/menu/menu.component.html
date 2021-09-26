@@ -1,4 +1,6 @@
 <div class="menu">
-  <app-icon randomColor class="menu__item" name="home" title="Домой" (click)="toMain()"></app-icon>
+  <div class="menu__item">
+    <img randomColor src="assets/img/fav.ico" height="100%" width="auto" (click)="toMain()">
+  </div>
   <app-icon randomColor class="menu__item" name="apps" title="Тема" (click)="toggleTheme()"></app-icon>
 </div>

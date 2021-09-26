@@ -37,6 +37,11 @@ const exploreList: ExploreItem[] = [
     title: 'Секундомер',
     route: Route.stopwatch,
     parentRoute: Route.projects
+  },
+  {
+    title: 'Случайный пароль',
+    route: Route['random-password'],
+    parentRoute: Route.projects
   }
 ];
 

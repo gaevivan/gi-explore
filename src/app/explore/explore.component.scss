@@ -9,14 +9,13 @@
   box-sizing: border-box;
   padding: 4rem;
   flex-direction: column;
-  min-width: 100rem;
   & * {
     font-size: 6rem;
   }
 }
 
 .selected {
-  background-color: $yellow-1;
+  background-color: $green-5;
 }
 
 .explore {
@@ -38,8 +37,13 @@
     }
   }
   &__filters-search {
-    max-width: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 80rem;
     box-sizing: border-box;
+    @include xs() {
+      max-width: 100%;
+    }
   }
   &__list {
     flex-shrink: 1;
@@ -60,6 +64,7 @@
     }
     @include bold();
     cursor: pointer;
+    user-select: none;
   }
   &__item::after {
     position: relative;

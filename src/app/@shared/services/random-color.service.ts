@@ -12,7 +12,6 @@ export class RandomColorService {
     const randomIndex: number = Math.round(
       Math.random() * (colorsList.length - 1)
     );
-    console.log(colorsList[randomIndex])
     this.color = colorsList[randomIndex];
     return this.color;
   }

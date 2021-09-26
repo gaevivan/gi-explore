@@ -1,14 +1,16 @@
-@import '/src/assets/scss/mixins.scss';
-@import '/src/assets/scss/colors.scss';
-@import '/src/assets/scss/adaptive.scss';
+@import "/src/assets/scss/mixins.scss";
+@import "/src/assets/scss/colors.scss";
+@import "/src/assets/scss/adaptive.scss";
 
 .menu {
   height: 100%;
   width: 100%;
-  gap: 5rem;
+  box-sizing: border-box;
   @include flex-container(column, center, space-between, nowrap);
+  padding: 1rem 0;
   @include xs() {
     @include flex-container(row, center, space-between, nowrap);
+    padding: 0 1rem;
   }
   &__item {
     height: 10rem;
@@ -21,7 +23,8 @@
       height: 14rem;
       width: 14rem;
     }
+    user-select: none;
     cursor: pointer;
-    color: $dark-3;
+    color: $main-4;
   }
 }

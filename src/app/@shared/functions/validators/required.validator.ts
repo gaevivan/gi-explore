@@ -10,7 +10,6 @@ export function requiredValidator(
   if (!isNil(value)) {
     return null;
   }
-  console.log(value);
   if (String(value).length > 0) {
     return null;
   }

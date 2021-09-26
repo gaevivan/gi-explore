@@ -7,5 +7,6 @@ export enum Route {
   'hot-and-cold' = 'hot-and-cold',
   projects = 'projects',
   'am-i-cool' = 'am-i-cool',
-  stopwatch = 'stopwatch'
+  stopwatch = 'stopwatch',
+  'random-password' = 'random-password'
 }

@@ -59,6 +59,13 @@ const ROUTES: Routes = [
             (module) => module.StopwatchModule
           ),
       },
+      {
+        path: Route['random-password'],
+        loadChildren: () =>
+          import('./random-password/random-password.module').then(
+            (module) => module.RandomPasswordModule
+          ),
+      },
     ],
   },
 ];
