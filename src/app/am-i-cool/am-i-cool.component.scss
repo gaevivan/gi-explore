@@ -1,3 +1,5 @@
+@import '/src/assets/scss/colors.scss';
+
 :host {
   display: flex;
   width: 100%;
@@ -8,6 +10,6 @@
 }
 
 h1 {
-  color: #F9AA3A;
+  color: $blue-4;
   font-size: 8rem;
 }
